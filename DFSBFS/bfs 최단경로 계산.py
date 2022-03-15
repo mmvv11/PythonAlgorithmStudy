@@ -7,20 +7,21 @@ def bfs(x, y):
 
     while queue:
         x, y = queue.popleft()
-
+        # 현재 노드에 인접한 노드를 모두 검사 bfs 돌리기
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
 
+            # 갈 수 없으면 재끼고
             if nx < 0 or nx >= n or ny < 0 or ny >= m:
                 continue
-            # 갈 수 없으면 재끼고
             if graph[nx][ny] == 0:
                 continue
             # 갈 수 있으면 값에 1을 더하고 큐에 넣으셈
             if graph[nx][ny] == 1:
                 graph[nx][ny] = graph[x][y] + 1
                 queue.append((nx, ny))
+                
     # 도착점의 값을 리턴하셈
     return graph[n-1][m-1]
 

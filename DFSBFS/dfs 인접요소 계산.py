@@ -1,3 +1,8 @@
+"""
+dfs로 풀었는데,, bfs로 풀 수는 없을까?
+"""
+
+
 def dfs(x, y):
     # 그래프 범위 내에서 탐색
     if x < 0 or x >= n or y < 0 or y >= m:
